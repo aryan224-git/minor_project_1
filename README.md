@@ -20,7 +20,6 @@
 <br>
 
 👨‍💻 **Created By:** Aryan Yadav  
-📍 **Location:** Varanasi, Uttar Pradesh, India  
 📅 **Date:** June 2026
 
 </div>
