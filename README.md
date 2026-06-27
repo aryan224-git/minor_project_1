@@ -1,129 +1,490 @@
-🩺 Breast Cancer Diagnosis Prediction Using Supervised Machine Learning
-<p align="center">
-<img src="https://img.shields.io/badge/Project-Machine%20Learning-blue?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Model-Random%20Forest-green?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Dataset-UCI%20Breast%20Cancer-orange?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
-</p>
+<div align="center">
 
-📌 Overview
-This project predicts whether a breast cancer case is a no-recurrence-event or a recurrence-event using supervised machine learning. The workflow includes data preprocessing, exploratory data analysis, model training, and evaluation.
+# 🎗️ Breast Cancer Recurrence Prediction
 
-📂 Dataset
-The dataset used is the Breast Cancer dataset from the UCI Machine Learning Repository.
+## Minor Project 1 — Supervised Machine Learning
 
-It contains:
+<br>
 
-286 samples
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![ML](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-orange)
+![Dataset](https://img.shields.io/badge/Dataset-UCI-lightgrey)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
-9 input features
+<br><br>
 
-2 target classes
+### 🩺 Predicting Breast Cancer Recurrence Using Machine Learning
 
-no-recurrence-events
+**A complete supervised ML project covering data preprocessing, EDA, model training, and evaluation.**
 
-recurrence-events
+<br>
 
-Dataset link:
-UCI Breast Cancer Dataset
+👨‍💻 **Created By:** Aryan Yadav  
+📍 **Location:** Varanasi, Uttar Pradesh, India  
+📅 **Date:** June 2026
 
-🎯 Objective
-The objective of this project is to build a machine learning model that can predict breast cancer recurrence based on patient and tumor-related attributes.
+</div>
 
-🛠️ Model Used
-Random Forest Classifier
-Random Forest was selected because:
 
-It performs well on tabular data.
+---
 
-It handles non-linear feature relationships effectively.
+# 📌 About The Project
 
-It reduces overfitting compared to a single decision tree.
 
-It works well after encoding categorical variables.
+Breast cancer recurrence prediction is a real-world medical classification problem.
 
-📊 Features
-The dataset includes:
+This project uses **Supervised Machine Learning** to predict whether a patient is likely to experience:
 
+<br>
+
+| Class | Meaning |
+|-|-|
+| 🟢 0 | No Recurrence Event |
+| 🔴 1 | Recurrence Event |
+
+<br>
+
+
+The project follows a complete Machine Learning workflow:
+
+```
+Dataset
+   ↓
+Cleaning
+   ↓
+Preprocessing
+   ↓
+EDA
+   ↓
+Model Training
+   ↓
+Evaluation
+   ↓
+Prediction
+```
+
+
+---
+
+# 🎯 Project Goals
+
+
+✅ Analyze medical dataset
+
+✅ Handle missing values
+
+✅ Perform feature engineering
+
+✅ Train ML classification model
+
+✅ Evaluate performance
+
+✅ Understand model limitations
+
+
+---
+
+# 📊 Dataset Details
+
+
+### Dataset Source
+
+🔗 UCI Machine Learning Repository  
+Breast Cancer Dataset
+
+
+<br>
+
+| Information | Details |
+|-|-|
+| Total Records | 286 |
+| Features | 9 |
+| ML Type | Binary Classification |
+| Data Type | Numerical + Categorical |
+| Missing Values | Yes |
+
+
+### Features
+
+```
 age
-
 menopause
-
 tumor-size
-
 inv-nodes
-
 node-caps
-
 deg-malig
-
 breast
-
 breast-quad
-
 irradiat
+```
 
-⚙️ Workflow
-Load the UCI dataset.
 
-Check missing values.
+---
 
-Encode the target labels.
+# 📂 Project Structure
 
-Impute missing values.
 
-One-hot encode categorical features.
+```
+minor_project_1
 
-Split data into training and testing sets.
+│
+├── 📁 data
+│      └── breast-cancer.csv
+│
+├── 📁 model
+│      └── random_forest_model.pkl
+│
+├── 📁 notebook
+│      └── breast_cancer_prediction.ipynb
+│
+├── 📁 results
+│      ├── class_distribution.png
+│      └── confusion_matrix.png
+│
+└── README.md
+```
 
-Train the Random Forest model.
 
-Evaluate using classification metrics.
+---
 
-📈 Evaluation Metrics
-The project uses:
+# 🧹 Data Preprocessing
 
-Accuracy
 
-Precision
+The dataset required preprocessing before training.
 
-Recall
 
-F1-Score
+### Steps Performed:
 
-Confusion Matrix
 
-Final Results
-Accuracy: 0.7414
+### 1️⃣ Missing Value Handling
 
-Precision: 0.5833
+```
+Categorical → Mode
 
-Recall: 0.4118
+Numerical → Median
+```
 
-F1-Score: 0.4828
 
-🧠 Conclusion
-This project demonstrates how supervised machine learning can be used for breast cancer recurrence prediction. Random Forest provides a strong and practical approach for this tabular medical dataset.
+### 2️⃣ Feature Encoding
 
-📁 Project Structure
-bash
-project-folder/
-├── Minor_Project_1.ipynb
-├── Minor_Project_1_Report.docx
-├── README.md
-└── requirements.txt
-▶️ How to Run
-bash
-pip install ucimlrepo pandas scikit-learn seaborn matplotlib
-Then run the notebook in Google Colab or Jupyter Notebook.
+Categorical values converted using:
 
-📚 References
-UCI Machine Learning Repository: Breast Cancer Dataset
+```
+One Hot Encoding
+```
 
-scikit-learn Random Forest documentation
 
-pandas documentation
+### 3️⃣ Data Splitting
 
-seaborn documentation
+```
+Training Data : 80%
 
-matplotlib documentation
+Testing Data  : 20%
+```
+
+
+---
+
+# 🔍 Exploratory Data Analysis
+
+
+The dataset distribution:
+
+
+```
+No Recurrence Events : 201
+
+Recurrence Events    : 85
+```
+
+
+The dataset is imbalanced:
+
+```
+70% → No Recurrence
+
+30% → Recurrence
+```
+
+
+Therefore:
+
+⭐ Accuracy alone is not enough.
+
+Important metrics:
+
+- Precision
+- Recall
+- F1 Score
+
+
+---
+
+# 🤖 Machine Learning Model
+
+
+## 🌲 Random Forest Classifier
+
+
+Used Model:
+
+
+```python
+RandomForestClassifier(
+    n_estimators = 300
+)
+```
+
+
+### Why Random Forest?
+
+
+✔ Handles complex patterns
+
+✔ Works well with tabular data
+
+✔ Reduces overfitting
+
+✔ Supports categorical features
+
+✔ Good classification performance
+
+
+---
+
+# ⚙️ ML Pipeline
+
+
+```
+              Dataset
+
+                 ↓
+
+       Feature Selection
+
+                 ↓
+
+       Missing Value Fix
+
+                 ↓
+
+        Data Encoding
+
+                 ↓
+
+        Train/Test Split
+
+                 ↓
+
+       Random Forest Model
+
+                 ↓
+
+            Prediction
+
+                 ↓
+
+          Evaluation
+```
+
+
+---
+
+# 📈 Model Results
+
+
+Test Data:
+
+```
+58 Samples
+```
+
+
+Performance:
+
+
+| Metric | Score |
+|-|-|
+| Accuracy | ⭐ 74.1% |
+| Precision | 58.3% |
+| Recall | 41.2% |
+| F1 Score | 48.3% |
+
+
+---
+
+# 📊 Confusion Matrix
+
+
+```
+
+                 Predicted
+
+
+                 0       1
+
+
+Actual 0        36      5
+
+
+Actual 1        10      7
+
+```
+
+
+Meaning:
+
+
+| Value | Count |
+|-|-|
+| True Negative | 36 |
+| False Positive | 5 |
+| False Negative | 10 |
+| True Positive | 7 |
+
+
+---
+
+# 🧠 Model Analysis
+
+
+The model achieved:
+
+## 🎯 Accuracy
+
+```
+74.1%
+```
+
+
+However, medical prediction requires focus on:
+
+## Recall
+
+
+The recurrence class recall:
+
+```
+41.2%
+```
+
+
+This means some recurrence cases were missed.
+
+
+Possible improvements:
+
+
+🚀 Class balancing
+
+🚀 SMOTE oversampling
+
+🚀 Hyperparameter tuning
+
+🚀 Threshold optimization
+
+
+---
+
+# 🚀 How To Run
+
+
+## Clone Repository
+
+
+```bash
+git clone https://github.com/aryan224-git/minor_project_1.git
+
+cd minor_project_1
+```
+
+
+## Install Libraries
+
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn joblib
+```
+
+
+## Run Notebook
+
+
+```bash
+jupyter notebook
+```
+
+
+Open:
+
+
+```
+notebook/breast_cancer_prediction.ipynb
+```
+
+
+---
+
+# 🔮 Load Trained Model
+
+
+```python
+import joblib
+
+
+model = joblib.load(
+"model/random_forest_model.pkl"
+)
+
+
+prediction = model.predict(data)
+
+```
+
+
+---
+
+# 🛠️ Technologies Used
+
+
+| Technology | Usage |
+|-|-|
+| 🐍 Python | Programming |
+| 📊 Pandas | Data Handling |
+| 🔢 NumPy | Calculations |
+| 🤖 Scikit-learn | ML Model |
+| 📈 Matplotlib | Visualization |
+| 🎨 Seaborn | EDA |
+| 💾 Joblib | Saving Model |
+
+
+---
+
+# 📚 References
+
+
+📌 UCI Machine Learning Repository
+
+📌 Scikit-learn Documentation
+
+📌 Pandas Documentation
+
+📌 Matplotlib Documentation
+
+📌 Seaborn Documentation
+
+
+---
+
+<div align="center">
+
+
+# ⭐ Minor Project 1
+
+## Supervised Machine Learning
+
+
+**Built with Python + Machine Learning 🚀**
+
+
+</div>
